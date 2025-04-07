@@ -1,5 +1,5 @@
 streamlit==1.10.0
-openai
+openai==0.28
 python-dotenv==0.19.2  # Pour charger les variables d'environnement
 altair>=4.2,<5
 Pillow
