@@ -17,7 +17,7 @@ def normalize_color(color_input):
         "blanc": "Blanc éclatant",
         "gris": "Gris métallisé",
     }
-    return color_map.get(color_input.lower(), color_input)
+    return color_map.get(color_input.lower(), color_input)  # Retirer la normalisation directe pour "Autre"
 
 # Configurer la page
 st.set_page_config(page_title="Trhacknon's dalle tool", page_icon=":guardsman:", layout="wide")
@@ -65,10 +65,17 @@ hidden_word = st.sidebar.text_input("Quel mot voulez-vous inclure de manière ca
 user_prompt = st.sidebar.text_area("Description du logo", value=user_prompt, key="user_prompt_textarea")
 
 # Normaliser les couleurs si l'option "Autre" est choisie
-if color.lower() == "autre":
+if color.lower() != "autre":
     color = normalize_color(color)
-if background.lower() == "autre":
+if background.lower() != "autre":
     background = normalize_color(background)
+
+# Si l'utilisateur choisit "Autre", afficher un champ de texte pour que l'utilisateur saisisse sa propre couleur
+if color.lower() == "autre":
+    color = st.sidebar.text_input("Spécifiez votre propre couleur", value=color, key="color_input")
+
+if background.lower() == "autre":
+    background = st.sidebar.text_input("Spécifiez votre propre couleur de fond", value=background, key="background_input")
 
 # Afficher un résumé des choix dans la sidebar
 st.sidebar.markdown("""
