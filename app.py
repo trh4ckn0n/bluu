@@ -24,6 +24,8 @@ local_css("style.css")
 style, color, hidden_word, user_prompt = get_user_inputs()
 
 # Sidebar avec options
+st.title("Générateur d'Images et Interface Interactive")
+
 st.sidebar.title("Options")
 style = st.sidebar.selectbox("Choisissez un style", 
                              ["Cyberpunk", "Futuristic", "Hacker Underground", "Artistique", "Autre"],
@@ -46,7 +48,6 @@ st.sidebar.write(f"Mot caché : {hidden_word}")
 st.sidebar.write(f"Description : {user_prompt}")
 
 # Titre principal et description
-st.title("Générateur d'Images et Interface Interactive")
 st.markdown("Créons quelque chose de magnifique et puissant ensemble.")
 st.subheader("Résumé de vos choix")
 st.write(f"Style : {style}")
