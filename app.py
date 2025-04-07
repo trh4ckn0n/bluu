@@ -24,17 +24,17 @@ st.sidebar.write(f"Couleur : {color}")
 st.sidebar.write(f"Mot caché : {hidden_word}")
 st.sidebar.write(f"Description : {user_prompt}")
 
-# Affichage des Tabs
-tab1, tab2 = st.tabs(["Générer", "Paramètres"])
+# Utilisation d'un radio button pour simuler des onglets
+tab = st.radio("Choisissez une section", ["Générer", "Paramètres"])
 
-with tab1:
+if tab == "Générer":
     st.subheader("Générer une image")
     if st.button("Générer l'Image"):
         display_loader()  # Affichage du loader
         image_url = generate_image(user_prompt)
         show_image(image_url)
 
-with tab2:
+elif tab == "Paramètres":
     st.subheader("Paramètres de personnalisation")
     size = st.slider("Sélectionner la taille de l'image", 100, 2000, 1024)
     st.write(f"Taille de l'image : {size}x{size}")
