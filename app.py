@@ -20,6 +20,13 @@ def local_css(file_name):
 # Appliquer le CSS personnalisé
 local_css("style.css")
 
+def local_csss(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+# Appliquer le CSS personnalisé
+local_css("s.css")
+
 # Récupérer les entrées de l'utilisateur depuis helpers.py
 style, color, hidden_word, user_prompt = get_user_inputs()
 
