@@ -5,6 +5,12 @@ footer[class*="st-emotion-cache, _terminalButton_rix23_138"] {
             font-family: 'Press Start 2P', cursive !important;
 
 }
+st.footer {
+            display: none;
+            color: #fff000 !important; /* Couleur du texte en blanc */
+            font-family: 'Press Start 2P', cursive !important;
+
+}
 
 ._terminalButton_rix23_138 {
             font-family: 'Press Start 2P', cursive !important;
