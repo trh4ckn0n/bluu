@@ -42,7 +42,7 @@ hidden_word = st.sidebar.text_input("Quel mot voulez-vous inclure de manière ca
 user_prompt = st.sidebar.text_area("Description du logo", value=user_prompt, key="user_prompt_textarea")
 
 st.sidebar.markdown("""
-<div style="border:1px solid #ddd; border-radius:8px; padding:16px; margin:16px 0; background-color:#1c1c1e; color:#fff;">
+<div style="font-family:'Press Start 2P', cursive !important; border:1px solid #ddd; border-radius:8px; padding:16px; margin:16px 0; background-color:#1c1c1e; color:#fff;">
     <h3>Résumé de vos choix</h3>
     <ul>
         <li><b>Style</b>: {}</li>
