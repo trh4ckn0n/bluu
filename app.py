@@ -23,12 +23,12 @@ local_css("style.css")
 
 
 # Récupérer les entrées de l'utilisateur depuis helpers.py
-title, style, color, hidden_word, user_prompt = get_user_inputs()
+style, color, hidden_word, user_prompt = get_user_inputs()
 # Sidebar avec options
 st.title("Générateur d'Images et Interface Interactive")
 
 st.sidebar.title("Options")
-title = st.markdown("Générateur d'Images et Interface Interactive")
+title = st.write("Générateur d'Images et Interface Interactive")
 style = st.sidebar.selectbox("Choisissez un style", 
                              ["Cyberpunk", "Futuristic", "Hacker Underground", "Artistique", "Autre"],
                              index=["Cyberpunk", "Futuristic", "Hacker Underground", "Artistique", "Autre"].index(style), 
