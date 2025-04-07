@@ -87,7 +87,7 @@ elif tab == "Paramètres":
 # Footer
 st.markdown("""
     <footer style="text-align: center; padding: 10px; font-size: 12px; color: #888;">
-        Créé avec ❤️ par trhacknon | <a href="https://t.me/@trhacknon" target="_blank">Suivez-moi sur Facebook</a>
+        Créé avec ❤️ par trhacknon | <a href="https://t.me/@trhacknon" target="_blank">Contactez-moi sur Telegram</a>
     </footer>
 """, unsafe_allow_html=True)
 
