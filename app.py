@@ -5,7 +5,7 @@ import time
 
 
 st.set_page_config(page_title="Trhacknon's dalle tool", page_icon=":guardsman:", layout="wide", initial_sidebar_state="expanded")
-st.header("G͛⦚é͛⦚n͛⦚é͛⦚r͛⦚a͛⦚t͛⦚e͛⦚u͛⦚r͛⦚ d͛⦚'͛⦚I͛⦚m͛⦚a͛⦚g͛⦚e͛⦚s͛⦚ et Interface Interactive")
+st.header("Générateur d'Images et Interface Interactive")
 
 # Fonction pour afficher un loader personnalisé
 def display_loader():
