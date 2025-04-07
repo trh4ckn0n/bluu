@@ -71,7 +71,7 @@ if tab == "Générer":
     st.subheader("Générer une image")
     if st.button("Générer l'Image", key="generate_button"):
         display_loader()
-        image_url = generate_image(user_prompt)
+        image_url = generate_image(user_prompt, size=size)
         show_image(image_url)
 
 elif tab == "Paramètres":
