@@ -28,7 +28,7 @@ style, color, hidden_word, user_prompt = get_user_inputs()
 st.title("Générateur d'Images et Interface Interactive")
 
 st.sidebar.title("Options")
-title = st.title("Générateur d'Images et Interface Interactive")
+title = st.markdown("Générateur d'Images et Interface Interactive")
 style = st.sidebar.selectbox("Choisissez un style", 
                              ["Cyberpunk", "Futuristic", "Hacker Underground", "Artistique", "Autre"],
                              index=["Cyberpunk", "Futuristic", "Hacker Underground", "Artistique", "Autre"].index(style), 
