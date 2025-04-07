@@ -11,12 +11,21 @@ def local_css(file_name):
 # Appliquer le CSS personnalisé
 local_css("style.css")
 
+# Récupérer les entrées de l'utilisateur depuis helpers.py
+style, color, hidden_word, user_prompt = get_user_inputs()
+
 # Sidebar avec options
 st.sidebar.title("Options")
-style = st.sidebar.selectbox("Choisissez un style", ["Moderne", "Rétro", "Futuriste", "Naturel"], index=0)
-color = st.sidebar.color_picker("Choisissez une couleur dominante", "#00f900")
-hidden_word = st.sidebar.text_input("Entrez un mot caché", "")
-user_prompt = st.sidebar.text_area("Décrivez l'image que vous souhaitez générer", "Un paysage futuriste avec des couleurs vives")
+style = st.sidebar.selectbox("Choisissez un style", 
+                             ["Cyberpunk", "Futuristic", "Hacker Underground", "Artistique", "Autre"],
+                             index=["Cyberpunk", "Futuristic", "Hacker Underground", "Artistique", "Autre"].index(style))
+
+color = st.sidebar.selectbox("Sélectionnez la couleur dominante", 
+                             ["Vert néon", "Rose fluorescent", "Bleu électrique", "Violet translucide", "Autre"],
+                             index=["Vert néon", "Rose fluorescent", "Bleu électrique", "Violet translucide", "Autre"].index(color))
+
+hidden_word = st.sidebar.text_input("Quel mot voulez-vous inclure de manière cachée ?", value=hidden_word)
+user_prompt = st.sidebar.text_area("Description du logo", value=user_prompt)
 
 st.sidebar.markdown("**Résumé de vos choix**")
 st.sidebar.write(f"Style : {style}")
