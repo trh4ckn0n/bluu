@@ -57,7 +57,7 @@ st.markdown("Créons quelque chose de magnifique et puissant ensemble.")
 # st.subheader("Résumé de vos choix")
 st.markdown("""
 <div style="font-family:'Press Start 2P';border:1px solid #ddd; border-radius:8px; padding:16px; margin:16px 0; background-color:#000000; color:#fff;">
-    <h2>Résumé de vos choix</h2>
+    <h2>Résumé de vos choix</h2><h1> :</h1>
     <ul>
         <li><b>Style</b>: {}</li>
         <li><b>Couleur</b>: {}</li>
