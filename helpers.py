@@ -2,7 +2,7 @@ import streamlit as st
 
 def get_user_inputs():
     """
-    Fonction pour récupérer les choix de l'utilisateur via l'interface.
+    Récupère les choix de l'utilisateur via l'interface Streamlit.
     """
     style = st.selectbox(
         "Choisissez un style de logo :",
@@ -18,13 +18,16 @@ def get_user_inputs():
 
     hidden_word = st.text_input("Quel mot voulez-vous inclure de manière cachée ?", value="TRHACKNON")
 
-    user_prompt = st.text_area("Description du logo", value="Un logo {style} sombre et contrasté, inspiré d'Anonymous et de l'hacktivisme, incarne l'amour et la protection envers les femmes autistes hypersensibles. Fond noir texturé avec du code vert néon, un papillon digital aux ailes violettes translucides, symbolisant la beauté cachée dans la technologie. Des circuits imprimés et des reflets irisés ornent les ailes. Un masque de Guy Fawkes discret en arrière-plan, représentant la protection invisible. Le mot '{hidden_word}' est subtilement caché dans le code ou les circuits, un message secret pour les âmes sensibles. L’ambiance cyberpunk douce mais puissante évoque un sanctuaire numérique sûr, où l’hyper-perception est un don et non une malédiction. L’image doit inspirer courage et confiance, un lieu où les femmes autistes hypersensibles trouvent un refuge dans un monde caché et mystérieux.")
+    # Prompt auto-généré basé sur l'image montrée
+    user_prompt = st.text_area("Prompt pour DALL·E", value=f"""
+A dark cyberpunk alley at night, filled with masked hackers riding dirt bikes and scooters, all wearing hoodies and Guy Fawkes masks. Neon wires and glowing cables hang above, casting a vibrant blue, pink, and red glow across the scene. Some hackers sit with laptops, others wheelie through puddles, all surrounded by an electric, chaotic atmosphere. The environment is gritty and urban, inspired by underground activism and digital rebellion. Cartoon-style hacker mascots stand in corners, giving attitude, dressed in dark hooded gear with neon accents. Subtle graffiti and digital circuit textures line the walls. The word "{hidden_word}" is hidden somewhere in the scene as graffiti or digital code. Comic-book style, highly detailed, vibrant contrast, with glitch and digital distortion effects to enhance the underground cyber feel.
+""".strip())
 
     return style, color, hidden_word, user_prompt
 
 def show_image(image_url):
     """
-    Affiche l'image générée par OpenAI dans l'interface.
+    Affiche l'image générée dans l'interface Streamlit.
     """
     st.image(image_url, caption="Image générée par OpenAI", use_column_width=True)
     st.markdown(f"**Lien de l'image générée** : [Voir l'image ici]({image_url})")
