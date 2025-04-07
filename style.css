@@ -1,10 +1,15 @@
 /* Conteneur principal en bas de l'écran */
 footer[class*="st-emotion-cache, _terminalButton_rix23_138"] {
             display: none;
+            color: #ff0000 !important; /* Couleur du texte en blanc */
+            font-family: 'Press Start 2P', cursive !important;
+
 }
 
 ._terminalButton_rix23_138 {
+            font-family: 'Press Start 2P', cursive !important;
             display: none;
+            color: #ff0000 !important; /* Couleur du texte en blanc */
 }
 
 ._container_1upux_1 {
@@ -31,7 +36,7 @@ footer[class*="st-emotion-cache, _terminalButton_rix23_138"] {
 ._hostedName_1upux_12 {
     display: flex !important;
     margin-left: .75rem !important;
-    color: #ffffff !important; /* Couleur du texte en blanc */
+    color: #ff0000 !important; /* Couleur du texte en blanc */
     font-weight: bold !important;
     font-size: 1rem !important; /* Taille de texte légèrement plus grande */
     letter-spacing: 0.5px !important; /* Espacement entre les lettres */
@@ -58,7 +63,7 @@ footer[class*="st-emotion-cache, _terminalButton_rix23_138"] {
 
 /* Effet de survol du lien externe */
 ._linkOutText_1upux_17:hover {
-    color: #ffcc00; /* Changement de couleur au survol */
+    color: #ff0000; /* Changement de couleur au survol */
 }
 
 /* Effet de survol de l'icône */
