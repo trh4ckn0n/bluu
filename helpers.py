@@ -2,32 +2,31 @@ import streamlit as st
 
 def get_user_inputs():
     """
-    Récupère les choix de l'utilisateur via l'interface Streamlit.
+    Interface utilisateur pour choisir les paramètres du logo.
     """
     style = st.selectbox(
         "Choisissez un style de logo :",
-        ["Cyberpunk", "Futuristic", "Hacker Underground", "Artistique", "Autre"],
+        ["Cyberpunk", "Hacker Underground", "Futuriste sensible", "Dark Artistic", "Autre"],
         index=0
     )
 
     color = st.selectbox(
         "Sélectionnez la couleur dominante :",
-        ["Vert néon", "Rose fluorescent", "Bleu électrique", "Violet translucide", "Autre"],
+        ["Rose néon", "Bleu digital", "Violet translucide", "Rouge profond", "Autre"],
         index=0
     )
 
-    hidden_word = st.text_input("Quel mot voulez-vous inclure de manière cachée ?", value="TRHACKNON")
+    hidden_word = st.text_input("Mot à inclure de manière cachée :", value="TRHACKNON")
 
-    # Prompt auto-généré basé sur l'image montrée
-    user_prompt = st.text_area("Prompt pour DALL·E", value=f"""
-A dark cyberpunk alley at night, filled with masked hackers riding dirt bikes and scooters, all wearing hoodies and Guy Fawkes masks. Neon wires and glowing cables hang above, casting a vibrant blue, pink, and red glow across the scene. Some hackers sit with laptops, others wheelie through puddles, all surrounded by an electric, chaotic atmosphere. The environment is gritty and urban, inspired by underground activism and digital rebellion. Cartoon-style hacker mascots stand in corners, giving attitude, dressed in dark hooded gear with neon accents. Subtle graffiti and digital circuit textures line the walls. The word "{hidden_word}" is hidden somewhere in the scene as graffiti or digital code. Comic-book style, highly detailed, vibrant contrast, with glitch and digital distortion effects to enhance the underground cyber feel.
+    user_prompt = st.text_area("Prompt image (modifiable)", value=f"""
+A digital artwork showing a bright neon pink heart shaped like a circuit board, glowing against a textured black background. Surrounding it are multiple Guy Fawkes masked figures in hoodies, some watching screens, others standing in shadows. One character comforts a sad man, representing empathy in the hacker world. A pair of ethereal translucent wings in violet hover behind the heart, symbolizing protection and sensitivity. Binary code, glitch effects, and subtle graffiti fill the dark space. One masked figure stands in front of the phrase “CAPITALISM IS PAST”. The word "{hidden_word}" is hidden in the circuits or digital code. High contrast, emotional, underground hacker cyberpunk style, like a digital sanctuary for hypersensitive minds.
 """.strip())
 
     return style, color, hidden_word, user_prompt
 
 def show_image(image_url):
     """
-    Affiche l'image générée dans l'interface Streamlit.
+    Affiche l'image générée dans Streamlit.
     """
-    st.image(image_url, caption="Image générée par OpenAI", use_column_width=True)
-    st.markdown(f"**Lien de l'image générée** : [Voir l'image ici]({image_url})")
+    st.image(image_url, caption="Image générée", use_column_width=True)
+    st.markdown(f"[Voir l'image ici]({image_url})")
