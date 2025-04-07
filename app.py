@@ -54,10 +54,10 @@ st.sidebar.markdown("""
 """.format(style, color, hidden_word, user_prompt), unsafe_allow_html=True)
 # Titre principal et description
 st.markdown("Créons quelque chose de magnifique et puissant ensemble.")
-st.subheader("Résumé de vos choix")
+# st.subheader("Résumé de vos choix")
 st.markdown("""
 <div style="font-family:'Press Start 2P';border:1px solid #ddd; border-radius:8px; padding:16px; margin:16px 0; background-color:#000000; color:#fff;">
-    <h3>Résumé de vos choix</h3>
+    <h2>Résumé de vos choix</h2>
     <ul>
         <li><b>Style</b>: {}</li>
         <li><b>Couleur</b>: {}</li>
