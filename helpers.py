@@ -16,9 +16,9 @@ def get_user_inputs():
         index=0
     )
 
-    hidden_word = st.text_input("Quel mot voulez-vous inclure de manière cachée ?", value="Bluu Haxxor")
+    hidden_word = st.text_input("Quel mot voulez-vous inclure de manière cachée ?", value="TRHACKNON")
 
-    user_prompt = st.text_area("Description du logo", value="Un logo cyberpunk avec des éléments numériques et un papillon...")
+    user_prompt = st.text_area("Description du logo", value="Un logo {style} sombre et contrasté, inspiré d'Anonymous et de l'hacktivisme, incarne l'amour et la protection envers les femmes autistes hypersensibles. Fond noir texturé avec du code vert néon, un papillon digital aux ailes violettes translucides, symbolisant la beauté cachée dans la technologie. Des circuits imprimés et des reflets irisés ornent les ailes. Un masque de Guy Fawkes discret en arrière-plan, représentant la protection invisible. Le mot '{hidden_word}' est subtilement caché dans le code ou les circuits, un message secret pour les âmes sensibles. L’ambiance cyberpunk douce mais puissante évoque un sanctuaire numérique sûr, où l’hyper-perception est un don et non une malédiction. L’image doit inspirer courage et confiance, un lieu où les femmes autistes hypersensibles trouvent un refuge dans un monde caché et mystérieux.")
 
     return style, color, hidden_word, user_prompt
 
