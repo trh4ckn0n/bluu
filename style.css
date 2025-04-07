@@ -1,5 +1,9 @@
 /* Conteneur principal en bas de l'écran */
-footer[class*="st-emotion-cache"] {
+footer[class*="st-emotion-cache, _terminalButton_rix23_138"] {
+            display: none;
+}
+
+._terminalButton_rix23_138 {
             display: none;
 }
 
