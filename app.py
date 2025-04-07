@@ -3,75 +3,92 @@ from logo_generator import generate_image
 from helpers import get_user_inputs, show_image
 import time
 
+# Configurer la page
 st.set_page_config(page_title="Trhacknon's dalle tool", page_icon=":guardsman:", layout="wide")
 st.header("Générateur d'Images et Interface Interactive")
 
-# Fonction loader
+# Fonction pour afficher un loader personnalisé
 def display_loader():
     with st.spinner("Génération de l'image..."):
-        time.sleep(3)
+        time.sleep(3)  # Simuler un délai pour l'exemple
 
-# Charger CSS
+# Charger le CSS personnalisé
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
+# Appliquer le CSS personnalisé
 local_css("style.css")
 
-# Sidebar
+# Récupérer les entrées de l'utilisateur depuis helpers.py
+style, color, background, hidden_word, user_prompt = get_user_inputs()
+
+# Sidebar avec options
 st.sidebar.title("Options")
-
-# Définir les choix possibles
-style_choices = ["Cyberpunk", "Futuristic", "Hacker Underground", "Artistique", "Autre"]
-color_choices = ["Vert néon", "Rose fluorescent", "Bleu électrique", "Violet translucide", "Rouge sombre", "Autre"]
-background_choices = ["Noir profond", "Bleu nuit", "Violet galactique", "Vert binaire", "Autre"]
-
-# Inputs avec fallback sécurisé
-style = st.sidebar.selectbox("Choisissez un style", style_choices,
-                             index=style_choices.index("Cyberpunk") if "Cyberpunk" in style_choices else 0,
+style = st.sidebar.selectbox("Choisissez un style", 
+                             ["Cyberpunk", "Futuristic", "Hacker Underground", "Artistique", "Autre"],
+                             index=["Cyberpunk", "Futuristic", "Hacker Underground", "Artistique", "Autre"].index(style), 
                              key="style_selectbox")
 
-color = st.sidebar.selectbox("Sélectionnez la couleur dominante", color_choices,
-                             index=color_choices.index("Vert néon") if "Vert néon" in color_choices else 0,
+color = st.sidebar.selectbox("Sélectionnez la couleur dominante", 
+                             ["Vert néon", "Rose fluorescent", "Bleu électrique", "Violet translucide", "Autre"],
+                             index=["Vert néon", "Rose fluorescent", "Bleu électrique", "Violet translucide", "Autre"].index(color),
                              key="color_selectbox")
 
-background = st.sidebar.selectbox("Choisissez le fond", background_choices,
-                                  index=background_choices.index("Noir profond") if "Noir profond" in background_choices else 0,
+background = st.sidebar.selectbox("Choisissez le fond", 
+                                  ["Noir profond", "Bleu nuit", "Violet galactique", "Vert binaire", "Autre"],
+                                  index=["Noir profond", "Bleu nuit", "Violet galactique", "Vert binaire", "Autre"].index(background),
                                   key="background_selectbox")
 
-hidden_word = st.sidebar.text_input("Quel mot voulez-vous inclure de manière cachée ?", key="hidden_word_input")
-user_prompt = st.sidebar.text_area("Description du logo", key="user_prompt_textarea")
-size = st.sidebar.slider("Taille de l'image", 256, 1024, 512, step=128, key="size_slider")
+hidden_word = st.sidebar.text_input("Quel mot voulez-vous inclure de manière cachée ?", value=hidden_word, key="hidden_word_input")
+user_prompt = st.sidebar.text_area("Description du logo", value=user_prompt, key="user_prompt_textarea")
 
-# Résumé visuel dans la sidebar
-st.sidebar.markdown(f"""
+# Afficher un résumé des choix dans la sidebar
+st.sidebar.markdown("""
 <div style="font-family:'Press Start 2P'; border:1px solid #ff0000; border-radius:8px; padding:16px; margin:16px 0; background-color:#000000; color:#fff;">
-    <h2>Résumé</h2>
+    <h2>Résumé de vos choix</h2>
     <ul>
-        <li><b>Style</b>: {style}</li>
-        <li><b>Couleur</b>: {color}</li>
-        <li><b>Fond</b>: {background}</li>
-        <li><b>Mot caché</b>: {hidden_word}</li>
-        <li><b>Description</b>: {user_prompt}</li>
-        <li><b>Taille</b>: {size}x{size}</li>
+        <li><b>Style</b>: {}</li>
+        <li><b>Couleur</b>: {}</li>
+        <li><b>Fond</b>: {}</li>
+        <li><b>Mot caché</b>: {}</li>
+        <li><b>Description</b>: {}</li>
     </ul>
 </div>
-""", unsafe_allow_html=True)
+""".format(style, color, background, hidden_word, user_prompt), unsafe_allow_html=True)
 
 # Section principale
+st.markdown("Créons quelque chose de magnifique et puissant ensemble.")
+st.markdown("""
+<div style="font-family:'Press Start 2P'; border:1px solid #7CFC0099; border-radius:8px; padding:16px; margin:16px 0; background-color:#000000; color:#fff;">
+    <h2>Résumé de vos choix</h2>
+    <ul>
+        <li><b>Style</b>: {}</li>
+        <li><b>Couleur</b>: {}</li>
+        <li><b>Fond</b>: {}</li>
+        <li><b>Mot caché</b>: {}</li>
+        <li><b>Description</b>: {}</li>
+    </ul>
+</div>
+""".format(style, color, background, hidden_word, user_prompt), unsafe_allow_html=True)
+
+# Utilisation d'un radio button pour simuler des onglets
 tab = st.radio("Choisissez une section", ["Générer", "Paramètres"], key="tabs_radio")
 
 if tab == "Générer":
     st.subheader("Générer une image")
     if st.button("Générer l'Image", key="generate_button"):
-        display_loader()
+        display_loader()  # Affichage du loader
+        # Formuler le prompt complet
         full_prompt = f"{style} style, {color} color, {background} background. Hidden word: {hidden_word}. {user_prompt}"
-        image_url = generate_image(full_prompt, size)
+        image_url = generate_image(full_prompt)
         show_image(image_url)
 
 elif tab == "Paramètres":
     st.subheader("Paramètres de personnalisation")
-    st.write("Modifiez les paramètres dans la sidebar pour personnaliser l’image générée.")
+    size = st.slider("Sélectionner la taille de l'image", 100, 2000, 1024, key="size_slider")
+    st.write(f"Taille de l'image : {size}x{size}")
+    st.write("Modifiez les paramètres ci-dessus pour personnaliser votre image.")
 
 # Footer
 st.markdown("""
