@@ -25,7 +25,7 @@ local_css("style.css")
 
 
 # Récupérer les entrées de l'utilisateur depuis helpers.py
-style, color, hidden_word, user_prompt = get_user_inputs()
+style, color, background, hidden_word, user_prompt = get_user_inputs()
 # Sidebar avec options
 # st.title("Générateur d'Images et Interface Interactive")
 
