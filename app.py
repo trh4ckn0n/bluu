@@ -3,6 +3,22 @@ from logo_generator import generate_image
 from helpers import get_user_inputs, show_image
 import time
 
+# Fonction pour normaliser les couleurs
+def normalize_color(color_input):
+    color_map = {
+        "vert": "Vert néon",
+        "rose": "Rose fluorescent",
+        "bleu": "Bleu électrique",
+        "violet": "Violet translucide",
+        "rouge": "Rouge vif",
+        "jaune": "Jaune solaire",
+        "cyan": "Cyan électrique",
+        "orange": "Orange fluo",
+        "blanc": "Blanc éclatant",
+        "gris": "Gris métallisé",
+    }
+    return color_map.get(color_input.lower(), color_input)
+
 # Configurer la page
 st.set_page_config(page_title="Trhacknon's dalle tool", page_icon=":guardsman:", layout="wide")
 st.header("Générateur d'Images et Interface Interactive")
@@ -21,7 +37,6 @@ def local_css(file_name):
 local_css("style.css")
 
 # Récupérer les entrées de l'utilisateur depuis helpers.py
-
 style, color, background, hidden_word, user_prompt = get_user_inputs()
 
 # Sidebar avec options
@@ -32,8 +47,12 @@ style = st.sidebar.selectbox("Choisissez un style",
                              key="style_selectbox")
 
 color = st.sidebar.selectbox("Sélectionnez la couleur dominante", 
-                             ["Vert néon", "Rose fluorescent", "Bleu électrique", "Violet translucide", "Autre"],
-                             index=["Vert néon", "Rose fluorescent", "Bleu électrique", "Violet translucide", "Autre"].index(color),
+                             ["Vert néon", "Rose fluorescent", "Bleu électrique", "Violet translucide", 
+                              "Rouge vif", "Jaune solaire", "Cyan électrique", "Orange fluo", 
+                              "Blanc éclatant", "Gris métallisé", "Autre"],
+                             index=["Vert néon", "Rose fluorescent", "Bleu électrique", "Violet translucide", 
+                                    "Rouge vif", "Jaune solaire", "Cyan électrique", "Orange fluo", 
+                                    "Blanc éclatant", "Gris métallisé", "Autre"].index(color),
                              key="color_selectbox")
 
 background = st.sidebar.selectbox("Choisissez la couleur du fond", 
@@ -44,6 +63,13 @@ background = st.sidebar.selectbox("Choisissez la couleur du fond",
 hidden_word = st.sidebar.text_input("Quel mot voulez-vous inclure de manière cachée ?", value=hidden_word, key="hidden_word_input")
 
 user_prompt = st.sidebar.text_area("Description du logo", value=user_prompt, key="user_prompt_textarea")
+
+# Normaliser les couleurs si l'option "Autre" est choisie
+if color.lower() == "autre":
+    color = normalize_color(color)
+if background.lower() == "autre":
+    background = normalize_color(background)
+
 # Afficher un résumé des choix dans la sidebar
 st.sidebar.markdown("""
 <div style="font-family:'Press Start 2P'; border:1px solid #ff0000; border-radius:8px; padding:16px; margin:16px 0; background-color:#000000; color:#fff;">
