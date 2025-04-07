@@ -58,11 +58,6 @@ elif tab == "Paramètres":
     st.write(f"Taille de l'image : {size}x{size}")
     st.write("Modifiez les paramètres ci-dessus pour personnaliser votre image.")
 
-# Affichage d'un expander avec plus d'infos
-with st.expander("Plus d'infos"):
-    st.write("Voici des informations supplémentaires...")
-    st.text("Vous pouvez ajouter des détails sur les images générées ou des conseils pour l'utilisateur.")
-
 # Footer
 st.markdown("""
     <footer style="text-align: center; padding: 10px; font-size: 12px; color: #888;">
