@@ -3,6 +3,15 @@ from logo_generator import generate_image
 from helpers import get_user_inputs, show_image
 import time
 
+
+
+# Fonction pour afficher un loader personnalisé
+def display_loader():
+    with st.spinner("Génération de l'image..."):
+        time.sleep(3)  # Simuler un délai pour l'exemple
+
+# Bouton pour générer l'image avec le loader
+
 # Charger le CSS personnalisé
 def local_css(file_name):
     with open(file_name) as f:
