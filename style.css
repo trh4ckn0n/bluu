@@ -1,3 +1,68 @@
+/* Conteneur principal en bas de l'écran */
+._container_1upux_1 {
+    display: flex;
+    height: 2.25rem;
+    width: 100%;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(40, 42, 55 / var(--tw-bg-opacity)); /* Fond sombre avec opacité */
+    align-items: center;
+    justify-content: space-between;
+    border-bottom-right-radius: .75rem;
+    border-bottom-left-radius: .75rem;
+    border-width: 0px;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre pour un effet flottant */
+    z-index: 1000; /* Assurer que cet élément soit au-dessus des autres */
+    transition: background-color 0.3s ease; /* Effet de transition pour le fond */
+}
+
+/* Nom ou texte principal à gauche */
+._hostedName_1upux_12 {
+    display: flex;
+    margin-left: .75rem;
+    color: #ffffff; /* Couleur du texte en blanc */
+    font-weight: bold;
+    font-size: 1rem; /* Taille de texte légèrement plus grande */
+    letter-spacing: 0.5px; /* Espacement entre les lettres */
+    transition: color 0.3s ease; /* Effet de transition pour la couleur du texte */
+}
+
+/* Texte du lien externe à droite */
+._linkOutText_1upux_17 {
+    display: flex;
+    margin-right: 1rem;
+    font-weight: 600;
+    color: #33cc99; /* Couleur personnalisée pour le texte */
+    transition: color 0.3s ease;
+}
+
+/* Icône du lien externe avec taille et couleur personnalisées */
+._linkOutIcon_1upux_23 {
+    margin-left: .25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: #33cc99; /* Couleur de l'icône */
+    transition: transform 0.3s ease; /* Effet de transformation */
+}
+
+/* Effet de survol du lien externe */
+._linkOutText_1upux_17:hover {
+    color: #ffcc00; /* Changement de couleur au survol */
+}
+
+/* Effet de survol de l'icône */
+._linkOutIcon_1upux_23:hover {
+    transform: scale(1.2); /* Agrandir légèrement l'icône au survol */
+}
+
+/* Effet de changement de fond au survol du conteneur */
+._container_1upux_1:hover {
+    background-color: rgb(50, 52, 65 / var(--tw-bg-opacity)); /* Assombrir le fond au survol */
+}
+
 
 /* style.css */
 body {
