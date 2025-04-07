@@ -54,7 +54,7 @@ st.sidebar.markdown("""
         <li><b>Description</b>: {}</li>
     </ul>
 </div>
-""".format(title, style, color, hidden_word, user_prompt), unsafe_allow_html=True)
+""".format(style, color, hidden_word, user_prompt), unsafe_allow_html=True)
 # Titre principal et description
 st.markdown("Créons quelque chose de magnifique et puissant ensemble.")
 # st.subheader("Résumé de vos choix")
