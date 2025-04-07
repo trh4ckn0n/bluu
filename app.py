@@ -74,7 +74,7 @@ tab = st.radio("Choisissez une section", ["Générer", "Paramètres"], key="tabs
 
 if tab == "Générer":
     st.subheader("Générer une image")
-    st.markdown("<button class="px-6 py-2 bg-teal-500 text-white rounded-lg shadow-md">
+    st.markdown("<button class='px-6 py-2 bg-teal-500 text-white rounded-lg shadow-md'>"
   <i class="fa fa-image"></i> Générer l'Image
 </button>", unsafe_allow_html=True)
     if st.button("Générer l'Image", key="generate_button"):
