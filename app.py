@@ -73,7 +73,6 @@ tab = st.radio("Choisissez une section", ["Générer", "Paramètres"], key="tabs
 
 if tab == "Générer":
     st.subheader("Générer une image")
-    st.markdown("<button class='px-6 py-2 bg-teal-500 text-white rounded-lg shadow-md'><i class='fa fa-image'></i> Générer l'Image</button>", unsafe_allow_html=True)
     if st.button("Générer l'Image", key="generate_button"):
         display_loader()  # Affichage du loader
         image_url = generate_image(user_prompt)
@@ -88,7 +87,7 @@ elif tab == "Paramètres":
 # Footer
 st.markdown("""
     <footer style="text-align: center; padding: 10px; font-size: 12px; color: #888;">
-        Créé avec ❤️ par trhacknon | <a href="https://www.facebook.com/share/g/SpQ3RD4dqmVHwfFm/" target="_blank">Suivez-moi sur Facebook</a>
+        Créé avec ❤️ par trhacknon | <a href="https://t.me/@trhacknon" target="_blank">Suivez-moi sur Facebook</a>
     </footer>
 """, unsafe_allow_html=True)
 
