@@ -8,13 +8,17 @@ load_dotenv()
 # Utiliser la clé API OpenAI
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
+import openai
+
 def generate_image(prompt):
-    """
-    Fonction pour générer une image à partir du prompt via l'API OpenAI.
-    """
-    response = openai.Image.create(
+    client = openai.OpenAI(api_key="TA_CLE_API")  # ou utilise os.getenv('OPENAI_API_KEY')
+
+    response = client.images.generate(
+        model="dall-e-3",  # dall-e-2 possible aussi
         prompt=prompt,
         n=1,
         size="1024x1024"
     )
-    return response['data'][0]['url']
+
+    return response.data[0].url
+    
