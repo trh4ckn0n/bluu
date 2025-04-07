@@ -18,14 +18,17 @@ style, color, hidden_word, user_prompt = get_user_inputs()
 st.sidebar.title("Options")
 style = st.sidebar.selectbox("Choisissez un style", 
                              ["Cyberpunk", "Futuristic", "Hacker Underground", "Artistique", "Autre"],
-                             index=["Cyberpunk", "Futuristic", "Hacker Underground", "Artistique", "Autre"].index(style))
+                             index=["Cyberpunk", "Futuristic", "Hacker Underground", "Artistique", "Autre"].index(style), 
+                             key="style_selectbox")
 
 color = st.sidebar.selectbox("Sélectionnez la couleur dominante", 
                              ["Vert néon", "Rose fluorescent", "Bleu électrique", "Violet translucide", "Autre"],
-                             index=["Vert néon", "Rose fluorescent", "Bleu électrique", "Violet translucide", "Autre"].index(color))
+                             index=["Vert néon", "Rose fluorescent", "Bleu électrique", "Violet translucide", "Autre"].index(color),
+                             key="color_selectbox")
 
-hidden_word = st.sidebar.text_input("Quel mot voulez-vous inclure de manière cachée ?", value=hidden_word)
-user_prompt = st.sidebar.text_area("Description du logo", value=user_prompt)
+hidden_word = st.sidebar.text_input("Quel mot voulez-vous inclure de manière cachée ?", value=hidden_word, key="hidden_word_input")
+
+user_prompt = st.sidebar.text_area("Description du logo", value=user_prompt, key="user_prompt_textarea")
 
 st.sidebar.markdown("**Résumé de vos choix**")
 st.sidebar.write(f"Style : {style}")
@@ -43,18 +46,18 @@ st.write(f"Mot caché : {hidden_word}")
 st.write(f"Description : {user_prompt}")
 
 # Utilisation d'un radio button pour simuler des onglets
-tab = st.radio("Choisissez une section", ["Générer", "Paramètres"])
+tab = st.radio("Choisissez une section", ["Générer", "Paramètres"], key="tabs_radio")
 
 if tab == "Générer":
     st.subheader("Générer une image")
-    if st.button("Générer l'Image"):
+    if st.button("Générer l'Image", key="generate_button"):
         display_loader()  # Affichage du loader
         image_url = generate_image(user_prompt)
         show_image(image_url)
 
 elif tab == "Paramètres":
     st.subheader("Paramètres de personnalisation")
-    size = st.slider("Sélectionner la taille de l'image", 100, 2000, 1024)
+    size = st.slider("Sélectionner la taille de l'image", 100, 2000, 1024, key="size_slider")
     st.write(f"Taille de l'image : {size}x{size}")
     st.write("Modifiez les paramètres ci-dessus pour personnaliser votre image.")
 
