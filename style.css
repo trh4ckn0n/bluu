@@ -1,40 +1,40 @@
-/* Conteneur principal en bas de l'écran */
 @keyframes glitch-anim {
   0% {
     transform: translate(2px, 0) skew(0.5deg);
-    text-shadow: 1px 0 red, -1px 0 blue;
+    text-shadow: 2px 0 red, -2px 0 blue, 2px 2px yellow, -2px -2px cyan;
   }
   20% {
     transform: translate(-2px, 0) skew(-0.5deg);
-    text-shadow: 1px 0 red, -1px 0 blue;
+    text-shadow: 2px 0 red, -2px 0 blue, 2px 2px yellow, -2px -2px cyan;
   }
   40% {
     transform: translate(2px, 0) skew(0.5deg);
-    text-shadow: 1px 0 red, -1px 0 blue;
+    text-shadow: 2px 0 red, -2px 0 blue, 2px 2px yellow, -2px -2px cyan;
   }
   60% {
     transform: translate(-2px, 0) skew(-0.5deg);
-    text-shadow: 1px 0 red, -1px 0 blue;
+    text-shadow: 2px 0 red, -2px 0 blue, 2px 2px yellow, -2px -2px cyan;
   }
   80% {
     transform: translate(2px, 0) skew(0.5deg);
-    text-shadow: 1px 0 red, -1px 0 blue;
+    text-shadow: 2px 0 red, -2px 0 blue, 2px 2px yellow, -2px -2px cyan;
   }
   100% {
     transform: translate(0, 0) skew(0);
-    text-shadow: 1px 0 red, -1px 0 blue;
+    text-shadow: 2px 0 red, -2px 0 blue, 2px 2px yellow, -2px -2px cyan;
   }
 }
 
 h2 {
   font-family: 'Press Start 2P', cursive;
-  font-size: 3rem;
+  font-size: 2rem; /* Taille réduite */
   color: white;
   position: relative;
   display: inline-block;
   animation: glitch-anim 1.5s infinite linear;
-  background: black;
   padding: 0.2rem 1rem;
+  z-index: 1;
+  text-transform: uppercase; /* Ajouter des majuscules */
 }
 
 footer[class*="st-emotion-cache, _terminalButton_rix23_138"] {
