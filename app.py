@@ -18,7 +18,7 @@ def local_css(file_name):
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # Appliquer le CSS personnalisé
-local_css("style.css")
+local_css("styles.css")
 
 def local_csss(file_name):
     with open(file_name) as f:
