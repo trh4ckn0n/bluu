@@ -28,8 +28,7 @@ style, color, hidden_word, user_prompt = get_user_inputs()
 st.title("Générateur d'Images et Interface Interactive")
 
 st.sidebar.title("Options")
-st.title("Générateur d'Images et Interface Interactive")
-
+title = st.title("Générateur d'Images et Interface Interactive")
 style = st.sidebar.selectbox("Choisissez un style", 
                              ["Cyberpunk", "Futuristic", "Hacker Underground", "Artistique", "Autre"],
                              index=["Cyberpunk", "Futuristic", "Hacker Underground", "Artistique", "Autre"].index(style), 
@@ -54,7 +53,7 @@ st.sidebar.markdown("""
         <li><b>Description</b>: {}</li>
     </ul>
 </div>
-""".format(style, color, hidden_word, user_prompt), unsafe_allow_html=True)
+""".format(title, style, color, hidden_word, user_prompt), unsafe_allow_html=True)
 # Titre principal et description
 st.markdown("Créons quelque chose de magnifique et puissant ensemble.")
 # st.subheader("Résumé de vos choix")
