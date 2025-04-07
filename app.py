@@ -36,8 +36,8 @@ color = st.sidebar.selectbox("Sélectionnez la couleur dominante",
                              key="color_selectbox")
 
 background = st.sidebar.selectbox("Choisissez le fond", 
-                                  ["Noir profond", "Bleu nuit", "Violet galactique", "Vert binaire", "Autre"],
-                                  index=["Noir profond", "Bleu nuit", "Violet galactique", "Vert binaire", "Autre"].index(background),
+                                  ["Noir profond", "Bleu nuit", "Violet galactique", "Vert binaire", "Noir texturé", "Autre"],
+                                  index=["Noir profond", "Bleu nuit", "Violet galactique", "Vert binaire", "Noir texturé", "Autre"].index(background),
                                   key="background_selectbox")
 
 hidden_word = st.sidebar.text_input("Quel mot voulez-vous inclure de manière cachée ?", value=hidden_word, key="hidden_word_input")
