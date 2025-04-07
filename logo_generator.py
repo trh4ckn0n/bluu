@@ -1,14 +1,11 @@
 import openai
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 
-# Charger les variables d'environnement depuis .env
 load_dotenv()
-
-# Utiliser la clé API OpenAI
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-import openai
+
 
 def generate_image(prompt):
     client = openai.OpenAI(api_key="TA_CLE_API")  # ou utilise os.getenv('OPENAI_API_KEY')
