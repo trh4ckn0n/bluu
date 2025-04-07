@@ -4,7 +4,7 @@ from helpers import get_user_inputs, show_image
 import time
 
 
-st.set_page_config(page_title="Générateur d'Images", page_icon=":guardsman:", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="Trhacknon's dalle tool", page_icon=":guardsman:", layout="wide", initial_sidebar_state="expanded")
 # Fonction pour afficher un loader personnalisé
 def display_loader():
     with st.spinner("Génération de l'image..."):
