@@ -77,6 +77,16 @@ if color.lower() == "autre":
 if background.lower() == "autre":
     background = st.sidebar.text_input("Spécifiez votre propre couleur de fond", value=background, key="background_input")
 
+# Appliquer les couleurs au style
+st.markdown(f"""
+    <style>
+        body {{
+            background-color: {background};
+            color: {color};
+        }}
+    </style>
+""", unsafe_allow_html=True)
+
 # Afficher un résumé des choix dans la sidebar
 st.sidebar.markdown("""
 <div style="font-family:'Press Start 2P'; border:1px solid #ff0000; border-radius:8px; padding:16px; margin:16px 0; background-color:#000000; color:#fff;">
