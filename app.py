@@ -13,16 +13,25 @@ local_css("style.css")
 
 # Sidebar avec options
 st.sidebar.title("Options")
-style = st.sidebar.selectbox("Choisissez un style", ["Moderne", "Rétro", "Futuriste", "Naturel"])
+style = st.sidebar.selectbox("Choisissez un style", ["Moderne", "Rétro", "Futuriste", "Naturel"], index=0)
 color = st.sidebar.color_picker("Choisissez une couleur dominante", "#00f900")
 hidden_word = st.sidebar.text_input("Entrez un mot caché", "")
-user_prompt = st.sidebar.text_area("Décrivez l'image que vous souhaitez générer")
+user_prompt = st.sidebar.text_area("Décrivez l'image que vous souhaitez générer", "Un paysage futuriste avec des couleurs vives")
 
 st.sidebar.markdown("**Résumé de vos choix**")
 st.sidebar.write(f"Style : {style}")
 st.sidebar.write(f"Couleur : {color}")
 st.sidebar.write(f"Mot caché : {hidden_word}")
 st.sidebar.write(f"Description : {user_prompt}")
+
+# Titre principal et description
+st.title("Générateur d'Images et Interface Interactive")
+st.markdown("Créons quelque chose de magnifique et puissant ensemble.")
+st.subheader("Résumé de vos choix")
+st.write(f"Style : {style}")
+st.write(f"Couleur : {color}")
+st.write(f"Mot caché : {hidden_word}")
+st.write(f"Description : {user_prompt}")
 
 # Utilisation d'un radio button pour simuler des onglets
 tab = st.radio("Choisissez une section", ["Générer", "Paramètres"])
