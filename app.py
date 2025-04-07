@@ -41,22 +41,6 @@ hidden_word = st.sidebar.text_input("Quel mot voulez-vous inclure de manière ca
 
 user_prompt = st.sidebar.text_area("Description du logo", value=user_prompt, key="user_prompt_textarea")
 
-st.sidebar.markdown("**Résumé de vos choix**")
-st.sidebar.write(f"Style : {style}")
-st.sidebar.write(f"Couleur : {color}")
-st.sidebar.write(f"Mot caché : {hidden_word}")
-st.sidebar.write(f"Description : {user_prompt}")
-st.markdown("""
-<div style="border:1px solid #ddd; border-radius:8px; padding:16px; margin:16px 0; background-color:#1c1c1e; color:#fff;">
-    <h3>Résumé de vos choix</h3>
-    <ul>
-        <li><b>Style</b>: {}</li>
-        <li><b>Couleur</b>: {}</li>
-        <li><b>Mot caché</b>: {}</li>
-        <li><b>Description</b>: {}</li>
-    </ul>
-</div>
-""".format(style, color, hidden_word, user_prompt), unsafe_allow_html=True)
 st.sidebar.markdown("""
 <div style="border:1px solid #ddd; border-radius:8px; padding:16px; margin:16px 0; background-color:#1c1c1e; color:#fff;">
     <h3>Résumé de vos choix</h3>
@@ -71,10 +55,17 @@ st.sidebar.markdown("""
 # Titre principal et description
 st.markdown("Créons quelque chose de magnifique et puissant ensemble.")
 st.subheader("Résumé de vos choix")
-st.write(f"Style : {style}")
-st.write(f"Couleur : {color}")
-st.write(f"Mot caché : {hidden_word}")
-st.write(f"Description : {user_prompt}")
+st.markdown("""
+<div style="border:1px solid #ddd; border-radius:8px; padding:16px; margin:16px 0; background-color:#1c1c1e; color:#fff;">
+    <h3>Résumé de vos choix</h3>
+    <ul>
+        <li><b>Style</b>: {}</li>
+        <li><b>Couleur</b>: {}</li>
+        <li><b>Mot caché</b>: {}</li>
+        <li><b>Description</b>: {}</li>
+    </ul>
+</div>
+""".format(style, color, hidden_word, user_prompt), unsafe_allow_html=True)
 
 # Utilisation d'un radio button pour simuler des onglets
 tab = st.radio("Choisissez une section", ["Générer", "Paramètres"], key="tabs_radio")
