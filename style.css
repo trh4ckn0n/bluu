@@ -90,8 +90,12 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-h1, h2, ._iframe_nim44_26, ._streamlitAppContainer_nim44_1 {
+h1, ._iframe_nim44_26, ._streamlitAppContainer_nim44_1 {
     color: #00FF00;
+    font-family: 'Press Start 2P', cursive;
+}
+h2 {
+    color: #FFF000;
     font-family: 'Press Start 2P', cursive;
 }
 /* Ajoute Google Fonts */
