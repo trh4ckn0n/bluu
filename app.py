@@ -24,7 +24,7 @@ local_css("style.css")
 
 # Récupérer les entrées de l'utilisateur depuis helpers.py
 style, color, hidden_word, user_prompt = get_user_inputs()
-
+st.set_page_config(page_title="Générateur d'Images", page_icon=":guardsman:")
 # Sidebar avec options
 st.title("Générateur d'Images et Interface Interactive")
 
