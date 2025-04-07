@@ -57,7 +57,7 @@ st.markdown("""
     </ul>
 </div>
 """.format(style, color, hidden_word, user_prompt), unsafe_allow_html=True)
-st..sidebar.markdown("""
+st.sidebar.markdown("""
 <div style="border:1px solid #ddd; border-radius:8px; padding:16px; margin:16px 0; background-color:#1c1c1e; color:#fff;">
     <h3>Résumé de vos choix</h3>
     <ul>
