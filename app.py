@@ -74,6 +74,7 @@ tab = st.radio("Choisissez une section", ["Générer", "Paramètres"], key="tabs
 
 if tab == "Générer":
     st.subheader("Générer une image")
+    st.markdown("<i class='fa fa-image'></i> Générer l'image", unsafe_allow_html=True)
     if st.button("Générer l'Image", key="generate_button"):
         display_loader()  # Affichage du loader
         image_url = generate_image(user_prompt)
