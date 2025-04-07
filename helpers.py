@@ -16,11 +16,17 @@ def get_user_inputs():
         index=0
     )
 
+    background = st.selectbox(
+        "Choisissez la couleur du fond :",
+        ["Noir texturé", "Gris foncé métallique", "Bleu nuit", "Rouge sombre", "Autre"],
+        index=0
+    )
+
     hidden_word = st.text_input("Quel mot voulez-vous inclure de manière cachée ?", value="TRHACKNON")
 
     # Prompt auto-généré basé sur les choix de l'utilisateur
     default_prompt = f"""
-Une œuvre d'art numérique dans un style {style.lower()} représentant un cœur néon {color.lower()} en forme de circuit imprimé, lumineux sur fond noir texturé. 
+Une œuvre d'art numérique dans un style {style.lower()} représentant un cœur néon {color.lower()} en forme de circuit imprimé, lumineux sur un fond {background.lower()}. 
 Autour, plusieurs personnages masqués façon Guy Fawkes, en capuche, certains sur ordinateur, d'autres dans l'ombre. 
 Un personnage réconforte un homme triste, symbolisant l'empathie. 
 Des ailes translucides {color.lower()} apparaissent en arrière-plan, comme une protection éthérée. 
@@ -31,7 +37,7 @@ Ambiance {style.lower()} underground sensible.
 
     user_prompt = st.text_area("Prompt pour DALL·E", value=default_prompt)
 
-    return style, color, hidden_word, user_prompt
+    return style, color, background, hidden_word, user_prompt
 
 def show_image(image_url):
     """
