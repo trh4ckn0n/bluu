@@ -21,6 +21,7 @@ def local_css(file_name):
 local_css("style.css")
 
 # Récupérer les entrées de l'utilisateur depuis helpers.py
+
 style, color, background, hidden_word, user_prompt = get_user_inputs()
 
 # Sidebar avec options
@@ -35,14 +36,14 @@ color = st.sidebar.selectbox("Sélectionnez la couleur dominante",
                              index=["Vert néon", "Rose fluorescent", "Bleu électrique", "Violet translucide", "Autre"].index(color),
                              key="color_selectbox")
 
-background = st.sidebar.selectbox("Choisissez le fond", 
-                                  ["Noir profond", "Bleu nuit", "Violet galactique", "Vert binaire", "Noir texturé", "Autre"],
-                                  index=["Noir profond", "Bleu nuit", "Violet galactique", "Vert binaire", "Noir texturé", "Autre"].index(background),
+background = st.sidebar.selectbox("Choisissez la couleur du fond", 
+                                  ["Noir texturé", "Gris foncé métallique", "Bleu nuit", "Rouge sombre", "Autre"],
+                                  index=["Noir texturé", "Gris foncé métallique", "Bleu nuit", "Rouge sombre", "Autre"].index(background),
                                   key="background_selectbox")
 
 hidden_word = st.sidebar.text_input("Quel mot voulez-vous inclure de manière cachée ?", value=hidden_word, key="hidden_word_input")
-user_prompt = st.sidebar.text_area("Description du logo", value=user_prompt, key="user_prompt_textarea")
 
+user_prompt = st.sidebar.text_area("Description du logo", value=user_prompt, key="user_prompt_textarea")
 # Afficher un résumé des choix dans la sidebar
 st.sidebar.markdown("""
 <div style="font-family:'Press Start 2P'; border:1px solid #ff0000; border-radius:8px; padding:16px; margin:16px 0; background-color:#000000; color:#fff;">
